@@ -14,16 +14,17 @@ function Form() {
     const Date=date.current.value
     const Contact=contact.current.value
         event.preventDefault();
-       setTimeout(()=>{console.log("Name : " + fullName + " Email : " + Email + " Address : " + " " + Address + " Date : " + Date + " Contact : " + Contact)},3000)
+       setTimeout(()=>{console.log("Name : " + fullName + " Email : " + Email + " Address : "  + Address + " Date : " + Date + " Contact : " + Contact)},3000)
     // alert(fullname.current.value + email.current.value + address.current.value + contact.current.value)
     fullname.current.value=""
+    date.current.value=""
         email.current.value=""
         address.current.value=""
         contact.current.value=""
     }
     
   return (
-    
+    <>
     <form className='formContainer'>
     <div className="mb-3">
       <label className="form-label">Full Name</label>
@@ -52,7 +53,7 @@ function Form() {
     <button  className="btn btn-danger btnn"><Link to="/" className='close'>Close</Link></button>
     
   </form>
-   
+   </>
   )
 }
 

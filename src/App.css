@@ -1,10 +1,8 @@
 .formContainer{
   width: 100%;
- 
-    position: absolute;
+    position: relative;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0%;
 background-color: aliceblue;
 padding: 20px;
 border: 1px solid rgb(69, 68, 68);
@@ -13,6 +11,10 @@ border-radius: 5px;
 .gender{
   display: flex;
  margin: 5px 10px;
+} 
+body{
+  height: 100vh;
+  scroll-behavior: auto;
 }
 #flexRadioDefault1{
   
