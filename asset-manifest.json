@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/StudentRegFormReact/static/css/main.6d22ebf4.css",
-    "main.js": "/StudentRegFormReact/static/js/main.9364444a.js",
+    "main.css": "/StudentRegFormReact/static/css/main.13604acf.css",
+    "main.js": "/StudentRegFormReact/static/js/main.6842826b.js",
     "index.html": "/StudentRegFormReact/index.html",
-    "main.6d22ebf4.css.map": "/StudentRegFormReact/static/css/main.6d22ebf4.css.map",
-    "main.9364444a.js.map": "/StudentRegFormReact/static/js/main.9364444a.js.map"
+    "main.13604acf.css.map": "/StudentRegFormReact/static/css/main.13604acf.css.map",
+    "main.6842826b.js.map": "/StudentRegFormReact/static/js/main.6842826b.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d22ebf4.css",
-    "static/js/main.9364444a.js"
+    "static/css/main.13604acf.css",
+    "static/js/main.6842826b.js"
   ]
 }
