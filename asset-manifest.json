@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/StudentRegFormReact/static/css/main.6d22ebf4.css",
+    "main.js": "/StudentRegFormReact/static/js/main.9364444a.js",
+    "index.html": "/StudentRegFormReact/index.html",
+    "main.6d22ebf4.css.map": "/StudentRegFormReact/static/css/main.6d22ebf4.css.map",
+    "main.9364444a.js.map": "/StudentRegFormReact/static/js/main.9364444a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d22ebf4.css",
+    "static/js/main.9364444a.js"
+  ]
+}
