@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
-
+import Home from './Home'
+import { Link } from 'react-router-dom'
 function Form() {
     const fullname=useRef()
     const email=useRef()
@@ -7,18 +8,20 @@ function Form() {
     const date=useRef()
     const contact=useRef()
     let onSubmitting=(event)=>{
+    const fullName=fullname.current.value
+    const Email= email.current.value
+    const Address=address.current.value
+    const Date=date.current.value
+    const Contact=contact.current.value
         event.preventDefault();
-       console.log(fullname.current.value)
-       console.log(email.current.value)
-       console.log(date.current.value)
-       console.log(address.current.value)
-       console.log(contact.current.value)
+       setTimeout(()=>{console.log("Name : " + fullName + " Email : " + Email + " Address : " + " " + Address + " Date : " + Date + " Contact : " + Contact)},3000)
     // alert(fullname.current.value + email.current.value + address.current.value + contact.current.value)
     fullname.current.value=""
-    email.current.value=""
-    address.current.value=""
-    contact.current.value=""
+        email.current.value=""
+        address.current.value=""
+        contact.current.value=""
     }
+    
   return (
     
     <form className='formContainer'>
@@ -45,7 +48,9 @@ function Form() {
     <label className="form-label">Contact No.</label>
     <input type="Number" ref={contact}  className="form-control" />
   </div>
-    <button type="submit" onClick={onSubmitting} className="btn btn-primary">Submit</button>
+    <button type="submit btnn" onClick={onSubmitting} className="btn btn-primary">Submit</button>
+    <button  className="btn btn-danger btnn"><Link to="/" className='close'>Close</Link></button>
+    
   </form>
    
   )
