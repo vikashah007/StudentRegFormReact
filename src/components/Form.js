@@ -1,56 +1,48 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Home from './Home'
 import { Link } from 'react-router-dom'
-function Form() {
-    const fullname=useRef()
-    const email=useRef()
-    const address=useRef()
-    const date=useRef()
-    const contact=useRef()
-    let onSubmitting=(event)=>{
-    const fullName=fullname.current.value
-    const Email= email.current.value
-    const Address=address.current.value
-    const Date=date.current.value
-    const Contact=contact.current.value
-        event.preventDefault();
-       setTimeout(()=>{console.log("Name : " + fullName + " Email : " + Email + " Address : "  + Address + " Date : " + Date + " Contact : " + Contact)},3000)
-    // alert(fullname.current.value + email.current.value + address.current.value + contact.current.value)
-    fullname.current.value=""
-    date.current.value=""
-        email.current.value=""
-        address.current.value=""
-        contact.current.value=""
+import Spinner from './Spinner'
+import {useForm} from 'react-hook-form'
+function Form({setVisible}) {
+   
+   const {register,handleSubmit,formState}=useForm()
+  const [spin,setSpin] = useState(false)
+   const {isSubmitted}=formState
+    function submitForm(data){
+      setSpin(true)
+      setTimeout(()=>{console.log(data);},30000)
+      setTimeout(()=>{setSpin(false)},30000)
+      
     }
-    
   return (
     <>
-    <form className='formContainer'>
+    <form className='formContainer' onSubmit={handleSubmit(submitForm)}>
     <div className="mb-3">
       <label className="form-label">Full Name</label>
-      <input type="text" className="form-control" ref={fullname} placeholder='Enter your name here'/>
+      <input type="text" className="form-control"  placeholder='Enter your name here' name="Name" {...register("Name")}/>
      
     </div>
     <div className="mb-3">
       <label className="form-label">Date Of Birth</label>
-      <input type="Date" ref={date} className="form-control" placeholder='Enter your name here'/>
+      <input type="Date" className="form-control" placeholder='Enter your name here' name="Dob" {...register("Dob")}/>
      
     </div>
     <div className="mb-3">
       <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-      <input type="email" ref={email} className="form-control" aria-describedby="emailHelp"/>
+      <input type="email" className="form-control" aria-describedby="emailHelp" name="email" {...register("email")}/>
     </div>
     <div className="mb-3">
       <label   className="form-label">Address</label>
-      <input type="text" ref={address} className="form-control"/>
+      <input type="text" className="form-control" name="address" {...register("address")}/>
     </div>
     
     <div className="mb-3">
     <label className="form-label">Contact No.</label>
-    <input type="Number" ref={contact}  className="form-control" />
+    <input type="Number" className="form-control" name="contact" {...register("contact")}/>
   </div>
-    <button type="submit btnn" onClick={onSubmitting} className="btn btn-primary">Submit</button>
-    <button  className="btn btn-danger btnn"><Link to="/" className='close'>Close</Link></button>
+    <button type="submit"   className="btn btn-primary btnn">{spin && <span className='spinner-grow spinner-grow-sm'></span>}Submit</button>  
+    
+    <button onClick={()=>setVisible(false)} className="btn btn-danger btnn"><Link to="/" className='close'>Close</Link></button>
     
   </form>
    </>
@@ -58,3 +50,5 @@ function Form() {
 }
 
 export default Form
+// disabled={isSubmitted}
+// 

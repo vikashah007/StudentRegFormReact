@@ -14,7 +14,6 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/Form" element={<Form/>}/>
         </Routes>
       </BrowserRouter>
     </>

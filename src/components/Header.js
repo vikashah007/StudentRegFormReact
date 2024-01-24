@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import {Modal} from 'reactstrap'
+import Form from './Form'
 
 const Header = () => {
+  const [visible,setVisible]=useState(false)
   return (
     <div class="container">
     <header class="d-flex flex align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -11,7 +14,10 @@ const Header = () => {
       </ul>
 
       <div class="col-md-3 text-end  col-md-auto">
-      <Link to="/Form" class="nav-link"><button type="button" class="btn btn-primary">Register Here</button></Link>
+      <button type="button" onClick={()=>setVisible(true)} class="btn btn-primary">Register Here</button>
+      <Modal isOpen={visible}>
+      <Form setVisible={setVisible}/>
+      </Modal>
       </div>
     </header>
   </div>
