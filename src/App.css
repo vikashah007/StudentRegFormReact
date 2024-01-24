@@ -33,4 +33,13 @@ body{
 }
 .btnn{
   margin: 0 10px;
+
+}
+.bothbtn{
+  float: right;
+}
+@media screen and (max-width: 480px) {
+  .formContainer{
+    margin-top: 20%;
+  }
 }
